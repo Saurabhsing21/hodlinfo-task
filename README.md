@@ -1,6 +1,8 @@
 # HODLINFO-QuadBTech
 
 The site is a cryptocurrency trading platform comparison tool that provides key information for different platforms, helping users make informed decisions.
+![Project Screenshot](./image/ss.png)
+![Project Screenshot](./image/ss3.png)
 
 ## About
 
@@ -81,4 +83,3 @@ No packages published.
 ---
 
 © 2024 GitHub, Inc.
-
