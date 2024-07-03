@@ -19,7 +19,7 @@ You can access the live application here: [hodlinfo-quadbtech.onrender.com](http
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/hodlinfo-quadbtech.git
+    git clone https://Saurabhsing21/hodlinfo-task
     cd hodlinfo-quadbtech
     ```
 
@@ -42,7 +42,7 @@ You can access the live application here: [hodlinfo-quadbtech.onrender.com](http
 
 ## Usage
 
-1. Access the application on the provided URL (usually `http://localhost:3000` by default)
+1. Access the application on the provided URL (usually `http://localhost:3001` by default)
 2. View the fetched data in a tabular format
 3. Explore different functionalities and features
 
@@ -51,9 +51,6 @@ You can access the live application here: [hodlinfo-quadbtech.onrender.com](http
 - Node.js
 - CSS
 - HTML5
-- MongoDB
-- Express.js
-- Bootstrap
 
 ## Resources
 
