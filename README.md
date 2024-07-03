@@ -28,14 +28,8 @@ You can access the live application here: [hodlinfo-quadbtech.onrender.com](http
     npm install
     ```
 
-3. Configure the database connection:
-    - Create a `.env` file in the root directory
-    - Add your MongoDB connection string in the `.env` file:
-      ```
-      MONGODB_URI=your_mongodb_connection_string
-      ```
 
-4. Start the server:
+3. Start the server:
     ```sh
     npm start
     ```
