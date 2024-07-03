@@ -1,0 +1,20 @@
+{
+  "name": "HODLINFO",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "dependencies": {
+    "axios": "^0.22.0",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.9",
+    "express": "^4.17.1",
+    "mongoose": "^7.4.1",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.27",
+    "tailwindcss": "^3.3.3"
+  }
+}

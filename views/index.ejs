@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HodLinfo</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+ <style>
+  * {
+    margin: 0;
+    
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+
+body {
+    background: var(--primary-color);
+}
+
+:root {
+    --primary-color: #191D28;
+    --secondary-color: #fff;
+    --third-color: #2E3241;
+}
+
+.light_theme {
+    --primary-color: #fff;
+    --secondary-color: #191D28;
+    --third-color: rgb(237, 234, 234);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 40px;
+}
+
+.logo {
+    width: 280px;
+}
+
+.menu_items {
+    display: flex;
+    align-items: center;
+}
+
+.menu_items li {
+    list-style: none;
+    margin: 0 5px;
+}
+
+#currency {
+    padding: 9px 10px;
+    text-align: center;
+    background: var(--third-color);
+    color: var(--secondary-color);
+    font-size: 1rem;
+    font-weight: semibold;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Oswald', sans-serif;
+    width: 70px;
+}
+
+.navbar_end {
+    display: flex;
+    align-items: center;
+}
+
+.timer {
+    color: #3DC6C1;
+    border: 3px solid #3DC6C1;
+    text-align: center;
+    border-radius: 50%;
+    padding: 7px 10px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.tel_btn {
+    width: 180px;
+    color: var(--secondary-color);
+    background: #3DC6C1;
+    font-size: 1rem;
+    padding: 8px 5px;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+    margin-right: 10px;
+}
+
+.tel_img {
+    width: 20px;
+    margin-bottom: -3px;
+}
+
+.powered_by {
+    color: #47494F;
+    font-size: 17px;
+    margin-left: 40px;
+    margin-top: -23px;
+}
+
+table {
+    width: 100%;
+    height: 100vh;
+    padding: 0 20px;
+    margin-top: 50px;
+    border-collapse: separate;
+    border-spacing: 0 15px;
+}
+
+.table_head {
+    color: #76797F;
+    font-size: 17px;
+}
+
+.table_row {
+    background: var(--third-color);
+    color: var(--secondary-color);
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 5px;
+    border-radius: 20px;
+    border: 1px solid #2E3241;
+}
+
+.toogle_btn {
+    position: relative;
+    width: 60px;
+    height: 34px;
+    background: var(--third-color);
+    border-radius: 25px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.indicator {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 2px;
+    right: 0;
+    background: #3DC6C1;
+    border-radius: 50%;
+    transform: scale(0.9);
+    transition: 0.4s;
+}
+
+.toogle_btn.active .indicator {
+    right: 30px;
+}
+
+ </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img class="logo" src="/image/logo.png" alt="Logo">
+            <ul class="menu_items">
+                <li>
+                    <select name="inr" id="currency">
+                        <option value="INR">INR</option>
+                    </select>
+                </li>
+                <li>
+                    <select name="currency" id="currency">
+                        <option value="BTC">BTC</option>
+                        <option value="ETH">ETH</option>
+                        <option value="USDT">USDT</option>
+                    </select>
+                </li>
+            </ul>
+            <div class="navbar_end">
+                <span class="timer">60</span>
+                <button class="tel_btn"><img class="tel_img" src="/image/" alt="Connect Telegram"> Connect Telegram</button>
+                <div class="toogle_btn">
+                    <span class="indicator"></span>
+                </div>
+            </div>
+        </nav>
+        <div class="powered_by">Powered By <span style="color: #3DC6C1;">Finstreet</span></div>
+    </header>
+
+    <main>
+        <table>
+            <thead class="table_head">
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Last</th>
+                    <th>Buy/Sell Price</th>
+                    <th>Volume</th>
+                    <th>Base Unit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% top10Pairs.forEach((ticker, i) => { %>
+                <tr class="table_row">
+                    <td><%= i + 1 %></td>
+                    <td><%= ticker.name %></td>
+                    <td><%= ticker.last %></td>
+                    <td><%= ticker.buy %> / <%= ticker.sell %></td>
+                    <td><%= ticker.volume %></td>
+                    <td><%= ticker.base_unit %></td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </main>
+
+    <script>
+        const toggle = document.querySelector('.toogle_btn');
+        //toggle button functionality for light/dark mode
+        toggle.onclick = function () {
+            toggle.classList.toggle('active');
+            document.body.classList.toggle('light_theme');
+        }
+    </script>
+</body>
+
+</html>
