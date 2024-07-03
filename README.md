@@ -12,10 +12,6 @@ You can access the live application here: [hodlinfo-quadbtech.onrender.com](http
 
 - HTML
 - CSS
-- Bootstrap
-- Node.js
-- Express.js
-- MongoDB
 - EJS
 - Axios
 
